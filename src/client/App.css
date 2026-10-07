@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+div {
+  padding: 25px 0 25px 0;
+}
+
+button {
+  background-image: linear-gradient(to right, #77a0d333, #79cbcac7);
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+
+  height: 35px;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+}
+
+.timer-container .orbit-example.bigbang {
+  width: min(600px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+  container-type: inline-size;
+}
+
+.timer-container .orbit-example > .gravity-spot {
+  --o-force: calc(100cqw * 2);
+}
+
+.timer-container .orbit-example .example-ring {
+  --o-range: 105deg;
+  --o-from: 130deg;
+}
+
+.timer-container .orbit-example .satellite button {
+  color: white;
+  font-size: 14px;
+  border: none;
+  background-image: linear-gradient(to right, #77a0d333, #79cbcac7);
+  background-color: transparent;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#root {
+  margin: 0;
+  min-height: 80vh;
+  display: flex;
+  place-items: center;
+  font-family: "Space Mono";
+}
+
+body {
+  background-image: linear-gradient(to bottom, #172554, #1e40af);
+  background-attachment: fixed;
+  color: white;
+}
+
+.orbit-example.bigbang {
+  width: min(400px, 100%);
+  height: auto;
+  aspect-ratio: 1;
+  container-type: inline-size;
+}
+
+.orbit-example > .gravity-spot {
+  --o-force: calc(100cqw * 2);
+}
+
+.orbit-example .satellite {
+  border: 0;
+}
+
+.orbit-example .example-center strong {
+  font-size: 48px;
+  font-style: italic;
+}
+
+.orbit-example .example-ring {
+  --o-range: 135deg;
+  --o-from: 115deg;
+}
+
+.orbit-example .guide {
+  border: 1px solid #b5e1f780;
+}
+
+.orbit-example .satellite button {
+  color: white;
+  font-size: 14px;
+  border: none;
+  background-image: linear-gradient(to right, #77a0d333, #79cbcac7);
+  background-color: transparent;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  cursor: pointer;
+}
