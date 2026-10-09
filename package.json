@@ -1,0 +1,23 @@
+{
+    "name": "arcade-website",
+    "version": "1.0.0",
+    "description": "Arcade website for the arcade games",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "dependencies": {
+        "bcryptjs": "^3.0.3",
+        "cookie-session": "^2.1.1",
+        "dotenv": "^18.0.6",
+        "express": "^4.21.0",
+        "mongodb": "^7.7.0"
+    },
+    "devDependencies": {
+        "typescript": "^7.0.2"
+    }
+}

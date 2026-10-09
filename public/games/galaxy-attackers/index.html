@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Attackers · Arcade</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/game-page.css">
+</head>
+<body class="game-page">
+    <header class="top-bar">
+        <a href="/" class="back-link">◀ ARCADE</a>
+        <span class="player-tag">PLAYER: <strong id="player-name">...</strong></span>
+    </header>
+
+    <h1>Galaxy Attackers</h1>
+
+    <div class="game-layout">
+        <main class="game-column">
+            <canvas id="game"></canvas>
+            <label id="score">0</label>
+
+            <div id="control-board">
+                <button type="button" id=start-button>Start</button>
+                <button type="button" id="reset-button">Reset</button>
+                <label id="control-text">Shoot: spacebar<br>Move: &nbsp;< > arrowskeys<br>Enemy 10 points<br>Swooping enemy 20 points</label>
+            </div>
+        </main>
+
+        <!-- data-game must match the game's id in GAMES (stub-api.js). -->
+        <aside class="leaderboard" data-game="galaxy-attackers" aria-labelledby="leaderboard-title">
+            <h2 id="leaderboard-title">HIGH SCORES</h2>
+            <ol id="leaderboard-list" aria-live="polite">
+                <li class="leaderboard-empty">Loading...</li>
+            </ol>
+            <p id="leaderboard-status" role="status"></p>
+        </aside>
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="/leaderboard.js"></script>
+</body>
+</html>

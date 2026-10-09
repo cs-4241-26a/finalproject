@@ -1,0 +1,142 @@
+body.login-page {
+    min-height: 100vh;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 16px;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+    overflow-x: hidden;
+}
+
+.login-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white 50%, transparent 51%),
+        radial-gradient(1px 1px at 30% 70%, white 50%, transparent 51%),
+        radial-gradient(2px 2px at 55% 30%, lightslateblue 50%, transparent 51%),
+        radial-gradient(1px 1px at 75% 85%, white 50%, transparent 51%),
+        radial-gradient(2px 2px at 85% 15%, white 50%, transparent 51%),
+        radial-gradient(1px 1px at 45% 50%, white 50%, transparent 51%),
+        radial-gradient(1px 1px at 15% 90%, lightslateblue 50%, transparent 51%),
+        radial-gradient(2px 2px at 92% 55%, white 50%, transparent 51%);
+    background-size: 300px 300px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.login-page h1 {
+    text-align: center;
+    line-height: 1;
+}
+
+.insert-coin {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: gold;
+    animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.login-panel {
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+    padding: 24px;
+    border: 5px solid white;
+    border-radius: 15px;
+    background-color: rgba(20, 20, 60, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+
+.field input {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 26px;
+    padding: 6px 10px;
+    color: white;
+    background-color: black;
+    border: 3px solid lightslateblue;
+    border-radius: 5px;
+}
+
+.field input:focus-visible {
+    outline: 3px solid gold;
+    outline-offset: 2px;
+}
+
+#login-error {
+    min-height: 1.2em;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #ff6b6b;
+}
+
+#login-button {
+    align-self: center;
+    font-family: "Jersey 10", sans-serif;
+    color: white;
+    background-color: blue;
+    width: 125px;
+    height: 125px;
+    font-size: 30px;
+    border: 15px solid darkblue;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#login-button:hover { background-color: royalblue; }
+#login-button:active { transform: scale(0.95); }
+#login-button:focus-visible {
+    outline: 3px solid gold;
+    outline-offset: 4px;
+}
+#login-button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.demo-hint {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    color: #b8b8e8;
+}
+
+.demo-hint code {
+    font-family: inherit;
+    color: gold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-page::before,
+    .insert-coin {
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page h1 { font-size: 2.8em; }
+}
