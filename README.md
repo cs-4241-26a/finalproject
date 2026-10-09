@@ -1,49 +1,48 @@
-# Final Project
-*Due October 9th by 1:59 PM*
+# WPI Forums
+Nicholas Houghton, Emma Normand, Becca Eiferman, Isaiah Balthazar, Luigi Cardaropoli 
 
-For your final project, you'll implement a web application that exhibits understanding of the course materials. 
-This project should provide an opportunity to both be creative and to pursue individual research and learning goals.
+WPI Forums is a web application where students can create and join different forums, create posts, and reply to others through comments. The application uses React in the browser, Node.js for server functionality, and MongoDB for persistent storage. Users can sign in with their name, email, and password, and verify their login through an SSO email. 
 
-## General description
-Your project should consist of a complete Web application, exhibiting facets of the three main sections of the course material:
+After signing in you can view forums you can click explore forums to join a forum, post to create a new post, and comment to comment on someone elses post. After creating a post you can also delete it, or pin a post.  You can view your account info in the top right, as well as sign out. 
 
-- Static web page content and design. You should have a project that is accessible, easily navigable, and features significant content.
-- Dynamic behavior implemented with JavaScript (TypeScript is also allowed if your group wants to explore it).
-- Server-side programming *using Node.js*. Typically this will take the form of some sort of persistent data (database), authentication, and possibly server-side computation.
-- A video (less than five minutes) where each group member explains some aspect of the project. An easy way to produce this video is for you all the groups members to join a Zoom call that is recorded; each member can share their screen when they discuss the project or one member can "drive" the interface while other members narrate (this second option will probably work better.) The video should be posted on YouTube or some other accessible video hosting service. Make sure your video is less than five minutes, but long enough to successfully  explain your project and show it in action. There is no minimum video length.
+**For sign in please do NOT use a WPI/outlook email as safelinks may invalidate the cookie not allowing you to sign in. Please check your spam folder if you do not see the email.**
 
-## Project ideation
-Excellent projects typically serve someone/some group; for this assignment you need to define your users and stakeholders. I encourage you to identify projects that will have impact, either artistically, politically, or in terms of productivity. 
+https://finalproject-ag9e.onrender.com
+## Instructions to use
 
-### Deliverables
+- To use the website first visit the link above. 
+- Since this uses SSO, you will need to create an account with a name, email address **(Please do NOT use a wpi/outlook email for signup as microsoft safelinks invalidates the cookie making the link "invalid")**, and password. (password needs to be 8 characters)
+- Open the signin link sent to your email in the same browser, and it will  bring you to the logged in forum page (Please check your spam folder if you do not see the email)
+- You can click the explore forums button on the left to see forums you have not joined. Select one to join it. 
+- After you have joined a forum, you can view the posts on it. You can also click the new forum button after entering a forum name on the left to create a forum
+- When you have joined a forum, you can click new post and enter a title and then body message, then publish. You can also leave a forum
+- You can use comments to reply to someone's post and pins to pin posts to the top for your account. You can also delete posts you own
+- You can also view your account details in the top right and change your name, email, and view the forums you are associated with. 
 
-#### Form Team (due 9/11)
-Students are will work in teams of 3-5 students for the project; teams of two can be approved with the permission of the instructor. Working in teams should help enable you to build a good project in a limited amount of time.  Use the `#project-logistics` channel in Discord to pitch ideas for final projects and/or find fellow team members as needed.
 
-Teams must be in place by end of day on Friday, September 11th. If you have not identified a team at this point, you will be assigned a team. 
+## Technology
 
-#### Proposal (due 9/18 by end of day) 
-Provide an outline of your project direction and the names of associated team members. 
-The outline should have enough detail so that staff can determine if it meets the minimum expectations, or if it goes too far to be reasonable by the deadline. Please include a general description of a project, and list of key technologies/libraries you plan on using (e.g. React, Three.js, Svelte, TypeScript etc.). Two to four paragraphs should provide enough level of detail. Name the file proposal.md and submit a pull request by Friday, September 18th at 11:59 PM (end of day). *Only one pull request is required per team*.
+- MongoDB is used for persistent storage to store users, forums, posts, and comments. We access the database through the express server. Posts contain a forum ID to make sure they are associated with a specific forum and each user has a joined forums array to determine what forums they are apart of. 
+- Node.js for running the backend of the application. Express was used to create API routes which were connected to MongoDB in order to retrieve and display stored data.
+- cookie-session for browser sessions: cookie-session is used for browser sessions because it stores session data in a signed, HTTP-only cookie so the app can keep track of logged-in users securely and efficiently without storing large session data on the server.
+- bcryptjs for password hashing: bcryptjs is used for password hashing because it creates a salted, adaptive hash that is slow to brute-force, making it a secure way to protect user passwords before storing them in the database.
+- Nodemailer for SMTP email delivery: Nodemailer is used for SMTP email delivery because it provides a simple and reliable way for a Node.js application to send emails like account verification links, password resets, and notifications through an SMTP server.
+- ProseMirror packages was used to show the text editor for creating a post. It renders it in markdown and allows you to bold and italicize text. 
+- Bootstrap and Bootstrap Icons for organizing forum posts in cards, and other components within the forum page and for button styling to reduce the amount of hand written CSS. I used icons for the comment and pin buttons to add more aesthetics to the forum posts.
 
-You will be given some class time to work on your proposal, but please plan on reserving additional time outside of class as needed. There are no other scheduled checkpoints for your project besides the final submission. 
+## Challenges
+- Some challenges we faced were getting the SSO to work on Render as our initial smtp attempts were blocked, and we had to debug this together
+- We also had some challenges with hooking up posts to a users account as the signin logic and post creation logic were not implemented at the same time. 
+- We also had to work together through merge conflicts if multiple people were working on similar files and both needed to merge their changes
 
-#### Turning in Your Project
-Submit a second PR on the final project repo to turn in your app and code. Again, only one pull request per team.
+## Group Members Responsibilities:
+- Becca: Worked on the functionality of the Account Information page. Created pop-ups allowing the user to edit their first name, last name, and email. Read from the database to display a user’s joined forums on the bottom of the page and on the side buttons. Added functionalities so that the joined forums could be viewed when clicked on and removed when the “Leave” button is clicked.
+- Emma: Added the User info section as well as the forums section to the user account page So that a user could edit/see all of their account info in one place. Ensured that the account page was stylistically consistent to the other pages in the application.
+- Isaiah: Worked on the overall styling and design for the Forum page. Created a pop up to allow users to submit new posts. Added the ability to add comments to different posts on the forum and have them stored in the database so they persist for all users. Added pin functionality. Users can pin posts to the top of their feed and pins are specific to each users account and they persist as well.
+- Nicholas: Worked on the main forum display page. Implemented & customized prosemirror packages as the text editor when authoring a post. Created routes, backend, and frontend logic for creating and viewing forum posts, creating forums, exploring and joining/leaving forums, and deleting a post you have created. Worked on basic styling and layout of the forum page. Also connected the users name to display as the author title for a post. 
+- Luigi: For the login setup, use cookie-session to manage authenticated browser sessions, bcryptjs to securely hash and verify user passwords, and Nodemailer to send SMTP-based email verification or password reset links for a complete and secure login flow.
 
-Deploy your app, in the form of a webpage, to Glitch/Heroku/Digital Ocean or some other service; it is critical that the application functions correctly wherever you post it.
+## Project Video:
+https://www.youtube.com/watch?v=RBpiQKZ0QHU
 
-The README for your second pull request should contain:
 
-1. A brief description of what you created, and a link to the project itself (two paragraphs of text)
-2. Any additional instructions that might be needed to fully use your project (login information etc.)
-3. An outline of the technologies you used and how you used them.
-4. What challenges you faced in completing the project.
-5. What each group member was responsible for designing / developing.
-6. A link to your project video.
-
-Think of 1,3, and 4 in particular in a similar vein to the design / tech achievements for A1—A4… make a case for why what you did was challenging and why your implementation deserves a grade of 100%.
-
-## FAQs
-
-- **Can I use XYZ framework?** You can use any web-based frameworks or tools available, but for your server programming you need to use Node.js. Your client-side scripting language should be either JavaScript or TypeScript. While the course staff is happy to help with frameworks used in the class, we can't guarantee we'll be able to assist you with other frameworks / databases; choose carefully!
