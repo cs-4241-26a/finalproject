@@ -1,0 +1,278 @@
+/* VARIALBES */
+:root{
+    --wpi-red:#AC2B37;
+    --wpi-gray:#A9B0B7;
+    --dark-red:#630811;
+    --error-color:#dfb156;
+    --error-color-2:#ab802a;
+}
+
+/* DEFAULTS AND PAGE CONTAINERS */
+*{
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+html {
+    overscroll-behavior:none;
+}
+body{
+    margin:0;
+    padding:0;
+}
+
+/* HEADINGS */
+h2{
+    text-align:center;
+    margin:0 0 1rem;
+    font-size:25px;
+}
+
+/* INPUT */
+button, select, .file-input{
+    background-color:var(--wpi-red);
+    border:none;
+    display:block;
+    cursor:pointer;
+    padding:.8rem;
+    max-width:fit-content;
+    color:white;
+    
+    &:hover{
+        background-color:var(--dark-red);
+    }
+    &:focus, &:focus-within{
+        outline:3px dotted var(--wpi-gray);
+    }
+}
+input[type=text], input[type=password], textarea{
+    padding:5px;
+    &:focus{
+        outline:3px dotted var(--wpi-gray);
+    }
+}
+input[type="file"]{
+    /* Hide the file input visually while preserving keyboard focus */
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    clip-path:inset(50%);
+    border:0;
+}
+
+/* REUSABLE CLASSES */
+.centered{
+    margin:0 auto;
+}
+.centered-text{
+    text-align:center;
+    margin-top:1rem;
+    display:block;
+}
+.sidescroller{
+    max-width:100%;
+    overflow-x:auto;
+    margin:1rem 0;
+}
+.fake-link{
+    color: var(--wpi-red);
+    text-decoration:underline;
+    border:none;
+    background:none;
+    display: inline;
+    padding:.2em;
+    text-align:center;
+
+    &:hover{
+        background-color:unset;
+        color:var(--dark-red);
+    }
+}
+.flex{
+    display:flex;
+}
+.copied{
+    background-color: rgb(1, 210, 1);
+    &:focus{
+        background-color:darkgreen;
+    }
+}
+.error{
+    background-color:var(--error-color);
+    padding:.5rem;
+    border-radius:5px;
+    border:2px solid var(--error-color-2);
+    width:fit-content;
+    margin-bottom:1rem;
+    margin-top:1rem;
+}
+
+/* MAIN CONTENT WRAPPERS */
+header{
+    background-color:var(--wpi-red);
+    color:white;
+    /* padding:.7rem; */
+    /* padding:0 .7rem; */
+    display:flex;
+    align-items:end;
+    :last-child{
+        margin-left:auto
+    }
+}
+header .title{
+    font-weight:bold;
+    font-size:20px;
+    margin:0;
+}
+header button, header .file-input{
+    height:4rem;
+    align-content:center;
+    padding: 0 1rem;
+    &:focus, &:focus-within{
+        text-decoration:underline dotted var(--wpi-gray) 3px;
+        outline:none;
+    }
+}
+main{
+    padding:1rem;
+}
+
+/* MAIN PAGE */
+.button-div{
+    width:max-content;
+
+    button, select{
+        display:inline;
+    }
+    
+    > button:nth-child(n + 1), > select:nth-child(n + 1){
+        margin-left:1rem;
+    }
+}
+
+/* SHARING DIALOG */
+body:has(dialog[open]){
+    overflow:hidden;
+}
+dialog{
+    max-width:800px;
+    padding:2rem;
+    border:none;
+    border-radius: 2rem;
+    input{
+        field-sizing:content;
+    }
+    button{
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-left:0.4rem;
+    }
+    .close-button{
+        height:fit-content;
+        margin-left:auto;
+    }
+    p{
+        width:fit-content;
+        margin-top:0;
+    }
+    .error{
+        margin-bottom:0;
+    }
+}
+
+/* AUTH FORM */
+#auth-form{
+    display:grid;
+    grid-template-columns:max-content max-content;
+    gap:1rem;
+    width:max-content;
+    margin:0 auto;
+
+    label{
+        margin:auto 0;
+    }
+    button{
+        grid-column-start:2;
+    }
+}
+
+/* SCHEDULE GRID */
+.schedule {
+    border-bottom:3px solid lightgray;
+    display: grid;
+    grid-auto-rows:minmax(5px, auto);
+    grid-template-columns:1fr repeat(5, 3fr);
+
+    div {
+        padding: 5px;
+    }
+
+    .day-label, .time-label {
+        font-weight: bold;
+        text-align: center;
+    }
+    .header-stripe {
+        background-color: #ccc;
+        grid-row: 1;
+        grid-column: 1 / 7;
+    }
+
+    .time-stripe {
+        background-color: #eee;
+    }
+
+    .course-section {
+        margin: 2px;
+        background-color: #ddd;
+
+        p {
+             margin-top: 0;
+             margin-bottom: 0.25em;
+        }
+
+        :first-of-type, :nth-child(2) {
+            font-weight: bold;
+        }
+    }
+
+    .course0{
+        background-color:rgb(218, 127, 75);
+    }
+    .course1{
+        background-color:rgb(124, 180, 220);
+    }
+    .course2{
+        background-color:rgb(219, 172, 31);
+    }
+    .course3{
+        background-color:rgb(103, 164, 62);
+    }
+    .course4{
+        background-color:rgb(168, 117, 197);
+    }
+    .course5{
+        background-color:rgb(46, 168, 163);
+    }
+    .course6{
+        background-color:rgb(227, 137, 132);
+    }
+    .course7{
+        background-color:rgb(100, 100, 193);
+    }
+    .course8{
+        background-color:rgb(117, 212, 180);
+    }
+    .course9{
+        background-color:rgb(212, 174, 117);
+    }
+    .course10{
+        background-color:rgb(155, 199, 97);
+    }
+    .course11{
+        background-color:rgb(163, 101, 126);
+    }
+}
