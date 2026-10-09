@@ -1,0 +1,36 @@
+{
+  "name": "wpi-geoguessr",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check": "turbo check"
+  },
+  "engines": {
+    "node": "24.20.0",
+    "npm": "11.19.0"
+  },
+  "volta": {
+    "node": "24.20.0",
+    "npm": "11.19.0"
+  },
+  "packageManager": "npm@11.19.0",
+  "devDependencies": {
+    "turbo": "^2.11.2"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
+  },
+  "dependencies": {
+    "@types/passport": "^1.0.17",
+    "dotenv": "^18.0.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.4.0",
+    "@mui/material": "^9.4.0",
+    "react-router-dom": "^7.18.4"
+  }
+}

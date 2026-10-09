@@ -1,0 +1,20 @@
+[
+    {"name":"noparking", "mapX":690, "mapY":350.0 },
+    {"name":"unityside", "mapX":2640, "mapY":953.0 },
+    {"name":"wpipolice", "mapX":2800.0, "mapY":520 },
+    {"name":"girdersculpture", "mapX":2600, "mapY":1023.0 },
+    {"name":"perreaultrear", "mapX":2550, "mapY":1216 },
+    {"name":"level5", "mapX":1786, "mapY":1447.0 },
+    {"name":"underbench", "mapX":1544, "mapY":1390.0 },
+    {"name":"nomomIdontwantabrick", "mapX":1081, "mapY":586.0 },
+    {"name":"goat1", "mapX":1425, "mapY":600.0 },
+    {"name":"admissionssign", "mapX":1400, "mapY":480.0 },
+    {"name":"armandhammer", "mapX":2304, "mapY":654},
+    {"name":"bigtree", "mapX":1613, "mapY":498},
+    {"name":"othergoat", "mapX":1106, "mapY":1247},
+    {"name":"campuscenter", "mapX":1520, "mapY":1319},
+    {"name":"flowers", "mapX":2504, "mapY":1168},
+    {"name":"culthq", "mapX":2375, "mapY":63},
+    {"name":"forestpath", "mapX":2102, "mapY":98},
+    {"name":"sundial", "mapX":2087, "mapY":293}
+]
