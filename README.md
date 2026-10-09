@@ -1,49 +1,34 @@
-# Final Project
-*Due October 9th by 1:59 PM*
+Gompei's Lost & Found - CS4241 Final Project
+===
 
-For your final project, you'll implement a web application that exhibits understanding of the course materials. 
-This project should provide an opportunity to both be creative and to pursue individual research and learning goals.
+Noah Freeman
+Zackary Perry
 
-## General description
-Your project should consist of a complete Web application, exhibiting facets of the three main sections of the course material:
+## Gompei's Lost & Found - https://finalproject-freeman-perry.onrender.com/
 
-- Static web page content and design. You should have a project that is accessible, easily navigable, and features significant content.
-- Dynamic behavior implemented with JavaScript (TypeScript is also allowed if your group wants to explore it).
-- Server-side programming *using Node.js*. Typically this will take the form of some sort of persistent data (database), authentication, and possibly server-side computation.
-- A video (less than five minutes) where each group member explains some aspect of the project. An easy way to produce this video is for you all the groups members to join a Zoom call that is recorded; each member can share their screen when they discuss the project or one member can "drive" the interface while other members narrate (this second option will probably work better.) The video should be posted on YouTube or some other accessible video hosting service. Make sure your video is less than five minutes, but long enough to successfully  explain your project and show it in action. There is no minimum video length.
+## Demo Video - https://youtu.be/wA56caS0G-k?si=f7vpV60scTQUbecB
 
-## Project ideation
-Excellent projects typically serve someone/some group; for this assignment you need to define your users and stakeholders. I encourage you to identify projects that will have impact, either artistically, politically, or in terms of productivity. 
+### Description:
+This final project submission is a Lost & Found service specifically catered towards the WPI community. Students and faculty can use the service to make posts about personal items that have gone missing, or to report other items that were found by themselves on campus. Upon creating an account and signing in, a site visitor will be able to view a corkboard of various submissions made to the service, along with the ability to filter them by poster, post type, and whether or not the post has already been resolved. A user can then go on to make a post of their own. Each post requires a title, with the option of adding a description and image as well. 
 
-### Deliverables
+Once a post has been made and thus added to the corkboard, other users aside from the poster can visit the post and start threads on it to communicate with the poster. Threads are private been the creater of the thread and the poster that they're reaching out to, meaning no other users can view these conversations. If a poster feels satisfied with a conversation they had in a thread (i.e., a lost item was found, they were able to return a missing belonging to another user. etc.), then they can mark their post as resolved, adding it to the list of archives within the server database.
 
-#### Form Team (due 9/11)
-Students are will work in teams of 3-5 students for the project; teams of two can be approved with the permission of the instructor. Working in teams should help enable you to build a good project in a limited amount of time.  Use the `#project-logistics` channel in Discord to pitch ideas for final projects and/or find fellow team members as needed.
+### Some Instructions
+To fully use Gompei's Lost & Found, a user will first need to register an account and then sign in with it. The account requires a username, password, display name, and the optional inclusion of a user's residence hall.
 
-Teams must be in place by end of day on Friday, September 11th. If you have not identified a team at this point, you will be assigned a team. 
 
-#### Proposal (due 9/18 by end of day) 
-Provide an outline of your project direction and the names of associated team members. 
-The outline should have enough detail so that staff can determine if it meets the minimum expectations, or if it goes too far to be reasonable by the deadline. Please include a general description of a project, and list of key technologies/libraries you plan on using (e.g. React, Three.js, Svelte, TypeScript etc.). Two to four paragraphs should provide enough level of detail. Name the file proposal.md and submit a pull request by Friday, September 18th at 11:59 PM (end of day). *Only one pull request is required per team*.
+### Technologies Used
+For the backend of the website, Node.js and Express were used to configure a modular REST API using ES modular syntax and custom route layering. MongoDB was used as a cloud-based host for the data that needed to be stored, such as posts and message threads, with the use of Mongoose allowing for the implementation of structured schemas. For account authentication in particular, jsonwebtoken was used to ensure stateless token signing so that users are continously checked to see if they're properly logged in. Finally, bcryptjs is used to guarantee secure password hashing upon the creation of a user account before the information becomes stored in the server database.
 
-You will be given some class time to work on your proposal, but please plan on reserving additional time outside of class as needed. There are no other scheduled checkpoints for your project besides the final submission. 
+For the frontend of the website, React and TypeScript were used alongside Vite. Material UI and many of its components were used for appearances. The client uses FileReader to import images from the deivce and then convert them to Base64 encoded images stored in the db.
 
-#### Turning in Your Project
-Submit a second PR on the final project repo to turn in your app and code. Again, only one pull request per team.
 
-Deploy your app, in the form of a webpage, to Glitch/Heroku/Digital Ocean or some other service; it is critical that the application functions correctly wherever you post it.
+### Challenges Faced/Achievements
+Continuous Session Invalidation Checking: An active token tracking set was layered into the authentication middleware, allowing GET /auth/logout to instantly revoke tokens server-side before their expiration. Tokens are stored in browser http only cookies and persist through refreshes allowing the user to stay logged in.
 
-The README for your second pull request should contain:
+Strict DTO & Response Enveloping: Every backend endpoint adheres to a standardized SimpleResponse format, which is an equivalent to a JSON message but with the inclusion of a status message and boolean describing whether a given request was successful or not.
 
-1. A brief description of what you created, and a link to the project itself (two paragraphs of text)
-2. Any additional instructions that might be needed to fully use your project (login information etc.)
-3. An outline of the technologies you used and how you used them.
-4. What challenges you faced in completing the project.
-5. What each group member was responsible for designing / developing.
-6. A link to your project video.
+Base64 String to Image conversion: MondoDB stores JSONs specifically, meaning that item images that appear on our website had to be transported and stored entirely as text strings. The frontend would then need to convert the Base64 strings to their respectives images and vice versa
 
-Think of 1,3, and 4 in particular in a similar vein to the design / tech achievements for A1—A4… make a case for why what you did was challenging and why your implementation deserves a grade of 100%.
-
-## FAQs
-
-- **Can I use XYZ framework?** You can use any web-based frameworks or tools available, but for your server programming you need to use Node.js. Your client-side scripting language should be either JavaScript or TypeScript. While the course staff is happy to help with frameworks used in the class, we can't guarantee we'll be able to assist you with other frameworks / databases; choose carefully!
+### Group Delegation
+Noah and Zack initially worked together to conceptualize and design how Gompei's Lost & Found would work as a website. Following the submission of our Project Proposal, the work was then divided. Noah worked on the frontend implementation of the website, while Zack worked on the backend implementation of the website.
