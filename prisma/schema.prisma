@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UtilityCategory {
+  GAS
+  ELECTRIC
+  WATER
+  INTERNET
+  TRASH
+}
+
+model Place {
+  zip           String        @id @db.Char(5)
+  city          String
+  state         String        @db.Char(2)
+  lat           Float?
+  lng           Float?
+  offerings     Offering[]
+  savedSearches SavedSearch[]
+
+  @@index([city, state])
+}
+
+model Provider {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  website   String?
+  phone     String?
+  offerings Offering[]
+}
+
+model Offering {
+  id         Int             @id @default(autoincrement())
+  zip        String          @db.Char(5)
+  providerId Int
+  category   UtilityCategory
+  price      Float?
+  place      Place           @relation(fields: [zip], references: [zip], onDelete: Cascade)
+  provider   Provider        @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@unique([zip, providerId, category])
+  @@index([zip, category])
+}
+
+model User {
+  id            Int           @id @default(autoincrement())
+  clerkId       String        @unique
+  email         String?
+  savedSearches SavedSearch[]
+}
+
+model SavedSearch {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  zip       String   @db.Char(5)
+  createdAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  place Place @relation(fields: [zip], references: [zip], onDelete: Cascade)
+
+  @@unique([userId, zip]) // Prevents saving the same ZIP twice
+}

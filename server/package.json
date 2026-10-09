@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dk-up": "docker compose up -d",
+    "dk-down": "docker compose down",
+    "dev": "tsx --watch --env-file=../.env src/App.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "7.10.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "prisma": "6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.2",
+    "mysql2": "^3.24.4"
+  }
+}
