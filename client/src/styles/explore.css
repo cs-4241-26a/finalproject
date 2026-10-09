@@ -1,0 +1,118 @@
+/* EXPLORE PAGE */
+
+.explore-page {
+    background: #f5f6fb;
+    min-height: 100vh;
+    padding: 45px 0;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    margin: 0 0 6px;
+    font-size: clamp(30px, 4vw, 40px);
+    color: #171925;
+}
+
+.header p {
+    margin: 0;
+    color: #5b6275;
+}
+
+
+/* FILTERS */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 20px auto;
+}
+
+.filters select {
+    width: 180px;
+    min-width: 180px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: white;
+
+    font-family: inherit;
+    font-size: 14px;
+    color: #252936;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    appearance: auto;
+    -webkit-appearance: menulist;
+}
+
+.filters select:focus {
+    outline: none;
+
+    border-color: #6848ec;
+
+    box-shadow: 0 0 0 2px rgba(104, 72, 236, 0.2);
+}
+
+
+/* CARD GRID */
+
+.user-card-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(400px, 1fr));
+
+    gap: 20px;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    /* Filters can wrap */
+    .filters {
+        width: 90%;
+    }
+
+    .filters select {
+        width: calc(50% - 6px);
+        min-width: 0;
+    }
+
+    /* One card per row */
+    .user-card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    /* One filter per row on very small screens */
+    .filters select {
+        width: 100%;
+    }
+}

@@ -1,0 +1,466 @@
+.connections-page {
+    min-height: calc(100vh - 64px);
+    padding: 48px clamp(20px, 6vw, 90px) 70px;
+    background: #f4f6fb;
+    color: #171923;
+}
+
+.connections-page > * {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Title on the left, summary pills on the right */
+.connections-header {
+    margin-bottom: 28px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 24px;
+}
+
+.connections-header h1 {
+    margin: 0 0 6px;
+    font-size: clamp(30px, 4vw, 40px);
+}
+
+.connections-header p {
+    margin: 0;
+    color: #5b6275;
+}
+
+/* SECTIONS */
+
+.connections-section {
+    margin-bottom: 36px;
+}
+
+.connections-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0 0 16px;
+    font-size: 22px;
+}
+
+.connections-count {
+    min-width: 26px;
+    padding: 3px 9px;
+
+    border-radius: 999px;
+    background: #6848ec;
+    color: white;
+
+    font-size: 13px;
+    text-align: center;
+}
+
+.connections-empty {
+    margin: 0;
+    color: #5f6577;
+}
+
+.connections-empty a {
+    color: #6848ec;
+    font-weight: 700;
+}
+
+/* CARDS */
+
+.connections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 18px;
+}
+
+.connection-card {
+    padding: 20px;
+
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(20, 25, 45, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.connection-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.connection-avatar {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+
+    background: #6848ec;
+    color: white;
+
+    font-weight: 800;
+}
+
+.connection-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.connection-info {
+    min-width: 0;
+}
+
+.connection-info p {
+    margin: 3px 0 0;
+    color: #5b6275;
+    font-size: 14px;
+}
+
+.connection-name {
+    color: #171923;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.connection-name:hover {
+    color: #6848ec;
+    text-decoration: underline;
+}
+
+.connection-games {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    overflow-wrap: anywhere;
+}
+
+.connection-games svg {
+    flex: 0 0 auto;
+    color: #7c5cff;
+}
+
+.connection-date {
+    margin: 0;
+    color: #5f6577;
+    font-size: 13px;
+}
+
+/* GAMERTAGS */
+
+.connection-gamertags {
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.connection-gamertags > div {
+    padding: 10px 12px;
+
+    border: 1px solid #e4e7f0;
+    border-radius: 12px;
+}
+
+.connection-gamertags dt {
+    color: #5f6577;
+    font-size: 12px;
+}
+
+.connection-gamertags dd {
+    margin: 3px 0 0;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.gamertag-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.copy-button {
+    flex: 0 0 auto;
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #e4e7f0;
+    border-radius: 8px;
+    background: white;
+    color: #5f6577;
+
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background: #f4f2ff;
+    color: #6848ec;
+}
+
+.copy-button.copied {
+    border-color: #b9ecd2;
+    background: #e8fff3;
+    color: #087a46;
+}
+
+/* SUMMARY ROW */
+
+.connections-summary {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.connections-summary li {
+    padding: 8px 14px;
+
+    background: white;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(20, 25, 45, 0.06);
+
+    color: #5f6577;
+    font-size: 14px;
+}
+
+.connections-summary strong {
+    color: #171923;
+}
+
+.connections-subtitle {
+    margin: -8px 0 16px;
+    color: #5f6577;
+}
+
+/* LOOKING FOR TEAMMATES (matches the Explore badge) */
+
+.connection-info .connection-looking {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 6px;
+    padding: 3px 9px;
+
+    border-radius: 999px;
+    background: #d9f7e8;
+    color: #117443;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* YOU BOTH PLAY */
+
+.shared-games {
+    padding: 12px 14px;
+
+    border-radius: 12px;
+    background: #f4f2ff;
+}
+
+.shared-games-title {
+    margin: 0 0 8px;
+
+    color: #5536d6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.shared-games ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.shared-games li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 14px;
+}
+
+.shared-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 2px 8px;
+
+    border-radius: 999px;
+    background: white;
+    color: #3d4256;
+
+    font-size: 12px;
+}
+
+.shared-badge svg {
+    color: #6848ec;
+}
+
+/* BUTTONS */
+
+.connection-actions {
+    margin-top: auto;
+
+    display: flex;
+    gap: 10px;
+}
+
+.connections-primary,
+.connections-secondary,
+.danger-link {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 16px;
+
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.connections-primary {
+    flex: 1;
+    background: #6848ec;
+    color: white;
+}
+
+.connections-primary:hover {
+    background: #5536d6;
+}
+
+.connections-secondary {
+    flex: 1;
+    background: #eceef5;
+    color: #282d3d;
+}
+
+.connections-secondary:hover {
+    background: #e0e3ee;
+}
+
+.danger-link {
+    padding: 6px 0;
+    background: none;
+    color: #b32828;
+}
+
+.danger-link:hover {
+    text-decoration: underline;
+}
+
+.connection-actions button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* ALERTS */
+
+.connections-alert {
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    border-radius: 12px;
+}
+
+.connections-alert.success {
+    background: #e8fff3;
+    color: #087a46;
+}
+
+.connections-alert.error {
+    background: #fff0f0;
+    color: #a92222;
+}
+
+
+/* TWO-COLUMN LAYOUT */
+
+.connections-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+    gap: 36px;
+    align-items: start;
+}
+
+/* The sidebar is narrow, so its cards stack in one column */
+.connections-side .connections-grid {
+    grid-template-columns: 1fr;
+}
+
+/* Stack the columns on tablets and phones */
+@media (max-width: 960px) {
+
+    .connections-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .connections-side .connections-grid {
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+
+}
+
+/* EMPTY SECTIONS */
+
+.connections-empty-box {
+    padding: 22px;
+
+    border: 2px dashed #d5d9e5;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.6);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    color: #5f6577;
+}
+
+.connections-empty-box svg {
+    flex: 0 0 auto;
+    margin-top: 1px;
+    color: #6848ec;
+}
+
+.connections-empty-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.connections-empty-box a {
+    color: #6848ec;
+    font-weight: 700;
+}

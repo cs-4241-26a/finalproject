@@ -1,0 +1,421 @@
+/* USER CARD */
+
+.user-card {
+    background: white;
+
+    border-radius: 18px;
+    padding: 28px;
+
+    box-shadow: 0 8px 24px rgba(20, 25, 45, 0.08);
+
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* TOP SECTION */
+
+.user-card-top {
+    display: flex;
+
+    gap: 14px;
+
+    align-items: flex-start;
+}
+
+.user-card-top > div:last-child {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* PROFILE PICTURE */
+
+.profile-picture-container {
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+}
+
+.profile-picture {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* DEFAULT PROFILE PICTURE */
+
+.default-profile-picture {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #7656f5;
+    border: 3px solid #a48cff;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    box-sizing: border-box;
+}
+
+.online-dot {
+    position: absolute;
+
+    right: 0;
+    bottom: 3px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #20b56b;
+
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+
+/* USER NAME */
+
+.user-name-row {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.user-name-row h2 {
+    margin: 0;
+
+    font-size: 23px;
+    line-height: 1.2;
+
+    min-width: 0;
+}
+
+
+/* REGION */
+
+.user-region {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 5px 0 9px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* BIO */
+
+.user-bio {
+    margin: 0 0 10px;
+
+    color: #334155;
+
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* PLATFORMS */
+
+.platforms {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+.platform-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    background: #efebff;
+    color: #6848ec;
+
+    padding: 6px 10px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.platform-badge svg {
+    flex-shrink: 0;
+}
+
+
+/* GAMES */
+
+.games-section {
+    margin-top: 20px;
+}
+
+.games-section h3 {
+    margin: 0 0 10px;
+
+    font-size: 17px;
+}
+
+
+/* GAME CARD */
+
+.game-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f6f8fb;
+
+    border: 1px solid #eef1f5;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    margin-bottom: 8px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* GAME ICON */
+
+.game-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #101827;
+
+    border-radius: 9px;
+
+    color: white;
+}
+
+.game-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* GAME INFO */
+
+.game-info {
+    min-width: 0;
+}
+
+
+/* GAME NAME + LOOKING STATUS */
+
+.game-name-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 7px;
+
+    min-width: 0;
+}
+
+.game-name-row h4 {
+    margin: 0;
+
+    font-size: 16px;
+
+    min-width: 0;
+}
+
+
+/* GAME LOOKING BADGE */
+
+.game-looking-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 5px 8px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+.game-looking-badge.looking {
+    background: #d9f7e8;
+    color: #117443;
+}
+
+.game-looking-badge.not-looking {
+    background: #fde2e2;
+    color: #b02525;
+}
+
+
+/* GAME BADGES */
+
+.game-badges {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.game-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 0;
+
+    border-radius: 0;
+
+    font-size: 12px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.game-badge svg {
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    stroke-width: 2;
+
+    color: #6848ec;
+}
+
+
+/* FRIEND REQUEST BUTTON */
+
+.friend-request-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #6848ec;
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.1s ease;
+}
+
+.friend-request-button:hover {
+    background: #5938d8;
+}
+
+.friend-request-button:active {
+    transform: scale(0.98);
+}
+
+.friend-request-button svg {
+    flex-shrink: 0;
+}
+
+.friend-request-button:disabled {
+    background: #e8fff3;
+    color: #087a46;
+
+    cursor: default;
+
+    transform: none;
+}
+
+
+/* RESPONSIVE CARD STYLING */
+
+@media (max-width: 650px) {
+
+    .game-name-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .game-looking-badge {
+        max-width: 100%;
+    }
+}

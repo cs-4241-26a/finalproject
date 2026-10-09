@@ -1,0 +1,137 @@
+.login-page {
+    min-height: 100vh;
+    padding: 40px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffafc;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 36px 32px;
+
+    background: white;
+    color: #38334f;
+
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(155, 123, 255, 0.12);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    font-size: 20px;
+    font-weight: 800;
+    color: #38334f;
+}
+
+.login-logo {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: #6848ec;
+    color: white;
+}
+
+.login-card h1 {
+    margin: 0 0 4px;
+    font-size: 28px;
+    color: #38334f;
+}
+
+.login-subtitle {
+    margin: 0 0 22px;
+    color: #6e6585;
+}
+
+
+.login-card label {
+    margin: 0 0 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #38334f;
+}
+
+.login-card input,
+.login-card select {
+    margin-bottom: 16px;
+    padding: 11px 13px;
+
+    border: 1px solid #e7dcff;
+    border-radius: 10px;
+    background: white;
+    color: #38334f;
+
+    font: inherit;
+}
+
+.login-card input:focus,
+.login-card select:focus {
+    outline: 2px solid #6848ec;
+    outline-offset: 1px;
+    border-color: transparent;
+}
+
+.login-card input[aria-invalid="true"] {
+    border-color: #6848ec;
+}
+
+
+.login-submit {
+    margin-top: 6px;
+    padding: 12px 17px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: #6848ec;
+    color: white;
+
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-submit:hover {
+    background: #3d25a1;
+}
+
+.login-submit:disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+
+.login-error {
+    margin-bottom: 16px;
+    padding: 11px 14px;
+
+    border-radius: 10px;
+    background: #fff0f6;
+    color: #6848ec;
+}
+
+.login-hint {
+    margin: 16px 0 0;
+
+    color: #6e6585;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+}
