@@ -1,0 +1,47 @@
+Personal Info - Aidan
+- Full name
+- Address
+- Phone Number
+- Email
+- Links
+
+Professional Summary - Aidan
+- Text
+
+
+
+
+Education - Austin
+- School Name
+- Location
+- Major
+- Minors
+- GPA
+- Degree
+- Grad year
+
+
+
+
+Experience - Andry
+- Work experience
+    - Company name
+    - Location
+    - Role
+    - Text
+- Projects
+    - Name
+    - Description
+    - Date
+- Activities
+
+
+
+
+Certifications/Awards/Accomplishments - Aishwarya
+- Name
+- Description
+- Date
+
+Skills - Aishwarya
+- Skills
