@@ -1,0 +1,165 @@
+body.game-page {
+    min-height: 100vh;
+    padding: 0 16px 32px;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+}
+
+.game-page .top-bar {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    padding: 4px 12px;
+    border: 3px solid white;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+    color: gold;
+    border-color: gold;
+    outline: none;
+}
+
+.game-page .player-tag strong {
+    color: gold;
+    font-weight: normal;
+}
+
+.game-page h1 {
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.game-layout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+}
+
+.game-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 460px;
+}
+
+/* Wrap the Start/Reset row to the canvas width instead of widening the column. */
+.game-column #control-board {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Keep the canvas from overflowing small screens; it scales, game coords don't change. */
+.game-column canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.leaderboard {
+    width: 280px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    background-color: rgba(20, 20, 60, 0.85);
+    border: 5px solid white;
+    border-radius: 15px;
+}
+
+.leaderboard h2 {
+    margin: 0 0 12px;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-align: center;
+    color: gold;
+}
+
+#leaderboard-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 2.2em 1fr auto;
+    gap: 8px;
+    padding: 4px 6px;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+.leaderboard-row:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.lb-rank { color: #b8b8e8; }
+.lb-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-score { text-align: right; }
+
+.leaderboard-row:nth-child(1) .lb-rank,
+.leaderboard-row:nth-child(1) .lb-score { color: gold; }
+
+.leaderboard-row.is-me .lb-name { color: #7fdfff; }
+
+.leaderboard-row.is-new {
+    background-color: rgba(255, 215, 0, 0.25);
+    animation: lb-flash 0.6s steps(1) 4;
+}
+
+@keyframes lb-flash {
+    50% { background-color: transparent; }
+}
+
+.leaderboard-empty {
+    font-size: 22px;
+    text-align: center;
+    color: #b8b8e8;
+}
+
+#leaderboard-status {
+    min-height: 1em;
+    margin: 8px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #ff6b6b;
+}
+
+#leaderboard-status.ok { color: #7dff9a; }
+
+/* Not enough room side by side: leaderboard drops below the game. */
+@media (max-width: 820px) {
+    .game-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .leaderboard {
+        width: 100%;
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-page h1 { font-size: 2.6em; }
+    .game-page .top-bar { font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .leaderboard-row.is-new { animation: none; }
+}

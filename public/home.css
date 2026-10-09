@@ -1,0 +1,147 @@
+body.home-page {
+    min-height: 100vh;
+    padding: 0 16px 40px;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+}
+
+.top-bar {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.player-tag strong {
+    color: gold;
+    font-weight: normal;
+}
+
+#logout-button {
+    font-family: "Jersey 10", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    background-color: red;
+    border: 4px solid darkred;
+    border-radius: 8px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#logout-button:hover { background-color: #ff3b3b; }
+
+.home-page h1 {
+    text-align: center;
+    line-height: 1;
+}
+
+.subtitle {
+    margin: 8px 0 28px;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-align: center;
+    color: gold;
+}
+
+.home-page main {
+    width: 100%;
+    max-width: 900px;
+}
+
+.game-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.game-card {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(20, 20, 60, 0.85);
+    border: 5px solid white;
+    border-radius: 15px;
+    transition: transform 0.1s, border-color 0.1s;
+}
+
+a.game-card:hover,
+a.game-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: gold;
+    outline: none;
+}
+
+.game-thumb {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.game-title {
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+.game-blurb {
+    font-size: 20px;
+    color: #b8b8e8;
+}
+
+.game-best {
+    font-size: 20px;
+    color: gold;
+}
+
+.game-play {
+    margin-top: auto;
+    padding: 6px 18px;
+    font-size: 24px;
+    background-color: blue;
+    border: 4px solid darkblue;
+    border-radius: 8px;
+}
+
+.coming-soon {
+    opacity: 0.45;
+    border-style: dashed;
+    justify-content: center;
+}
+
+#home-error {
+    margin-top: 24px;
+    font-size: 24px;
+    text-align: center;
+    color: #ff6b6b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .game-card { transition: none; }
+    a.game-card:hover,
+    a.game-card:focus-visible { transform: none; }
+}
+
+@media (max-width: 480px) {
+    .home-page h1 { font-size: 2.8em; }
+    .top-bar { font-size: 20px; }
+    .subtitle { font-size: 26px; letter-spacing: 2px; }
+    .game-list { grid-template-columns: 1fr; }
+}

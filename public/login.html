@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in · Arcade</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body class="login-page">
+    <h1>ARCADE</h1>
+    <p class="insert-coin" aria-hidden="true">INSERT COIN</p>
+
+    <main>
+        <form id="login-form" class="login-panel" novalidate>
+            <label class="field">
+                PLAYER NAME
+                <input id="username" name="username" autocomplete="username" required autofocus>
+            </label>
+
+            <label class="field">
+                PASSWORD
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+            </label>
+
+            <p id="login-error" role="alert" aria-live="assertive"></p>
+
+            <button type="submit" id="login-button">START</button>
+
+            <button type="button" id="guest-button">PLAY AS GUEST</button>
+            
+            <!-- Remove this hint once the real login replaces the dummy account. -->
+            <p class="demo-hint">Demo account: <code>player1</code> / <code>arcade</code></p>
+        </form>
+    </main>
+
+    <script>
+        const form = document.getElementById("login-form");
+        const button = document.getElementById("login-button");
+        const guestButton = document.getElementById("guest-button");
+
+        const errorText = document.getElementById("login-error");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            errorText.textContent = "";
+
+            const username = form.username.value.trim();
+            const password = form.password.value;
+            if (!username || !password) {
+                errorText.textContent = "Enter a player name and password.";
+                (username ? form.password : form.username).focus();
+                return;
+            }
+
+            button.disabled = true;
+            try {
+                const res = await fetch("/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                if (res.ok) {
+                    window.location.href = "/";
+                    return;
+                }
+
+                const data = await res.json().catch(() => ({}));
+                errorText.textContent = data.error || "Login failed. Try again.";
+                form.password.value = "";
+                form.password.focus();
+            } catch {
+                errorText.textContent = "Can't reach the server. Check your connection.";
+            } finally {
+                button.disabled = false;
+            }
+        });
+
+        guestButton.addEventListener("click", async () => {
+            const res = await fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({guest: true}),
+            });
+            
+            if (res.ok){
+                window.location.href = '/'
+            }
+        });
+
+    </script>
+</body>
+</html>
