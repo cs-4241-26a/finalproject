@@ -1,0 +1,10 @@
+.scrollable-box {
+  /* 1. Set the maximum height limit */
+  max-height: 20rem; 
+  
+  /* 2. Enable vertical scrolling only when content overflows */
+  overflow-y: auto;  
+  
+  /* 3. Optional: Prevent unwanted horizontal scrollbars */
+  overflow-x: hidden; 
+}
