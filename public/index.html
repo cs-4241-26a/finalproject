@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <title>Music Machine</title>
+  <meta charset='utf-8'>
+  <script type="module" src='js/main.js'></script>
+  <link rel='stylesheet' href='css/main.css'>
+</head>
+
+<body>
+  <div id="start-screen">
+      <h2>Music Machine</h2>
+      <p>Click start to play some music</p>
+    <button id="start-button" type="button">Start</button>
+  </div>
+  <header class="app-header">
+      <h1>Music Machine</h1>
+  </header>
+  <main class="workspace">
+    <aside class="shape-panel" aria-labelledby="shape-title">
+      <h2 id="shape-title">Tools</h2>
+
+      <button id ="select-tool" type="button" aria-pressed="true">Select</button>
+      <button type= "button" data-shape= "rectangle" aria-pressed="false"> Rectangle</button>
+      <button type= "button" data-shape="circle" aria-pressed="false">Circle </button>
+      <button type= "button" data-shape="triangle" aria-pressed="false">Triangle</button>
+      <button type = "button" data-shape= "spawner" aria-pressed="false"> Spawner</button>
+      <button type= "button" data-shape="killbox" aria-pressed="false">Kill box</button>
+      <button type="button" data-shape="remove" aria-pressed="false">Remove</button>
+    </aside>
+
+    <section class="canvas-panel" aria-label="Music machine canvas">
+      <div id="canvas-stage"></div>
+    </section>
+
+    <aside class="inspector" aria-labelledby="inspector-title">
+      <h2 id="inspector-title"> Inspector</h2>
+
+      <label for="instrument-input">Instrument</label>
+      <select id="instrument-input" disabled>
+        <option value="">Select an instrument</option>
+        <option value="0">Piano</option>
+        <option value="1">Trumpet</option>
+      </select>
+
+      <label for="pitch-input">Pitch</label>
+      <select id="pitch-input" disabled>
+        <option value="">Select a pitch</option>
+      </select>
+
+      <label for="angle-input">Angle</label>
+      <select id="angle-input" disabled>
+        <option value="">Select an angle</option>
+      </select>
+
+    </aside>
+  </main>
+
+</body>
+
+</html>

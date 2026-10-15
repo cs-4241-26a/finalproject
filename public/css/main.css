@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #101218;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.app-header {
+    padding: 20px;
+    border-bottom: 1px solid #30343d;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.app-header p {
+    color: #a9adb8;
+}
+
+.workspace {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shape-panel {
+    width: 180px;
+    padding: 20px;
+    background-color: #1b1e26;
+    border: 1px solid #30343d;
+    border-radius: 10px;
+}
+
+.shape-panel h2 {
+    margin-top: 0;
+}
+
+.shape-panel p {
+    color: #a9adb8;
+    font-size: 14px;
+}
+
+.shape-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    background-color: #292e39;
+    color: white;
+
+    border: 1px solid #454b58;
+    border-radius: 6px;
+
+    text-align: left;
+}
+
+.shape-panel button:hover {
+    background-color: #34465c;
+}
+
+.shape-panel button[aria-pressed="true"] {
+    background-color: #34465c;
+    border-color: #81c7ff;
+}
+
+.canvas-panel {
+    background-color: black;
+    border: 1px solid #30343d;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+#canvas-stage {
+    width: 800px;
+    height: 600px;
+}
+
+.inspector {
+    width: 260px;
+    padding: 20px;
+    background-color: #1b1e26;
+    border: 1px solid #30343d;
+    border-radius: 10px;
+}
+
+.inspector h2 {
+    margin-top: 0;
+}
+
+.inspector dl {
+    margin-top: 20px;
+}
+
+
+.inspector label {
+    display: block;
+    margin-top: 16px;
+}
+
+.inspector select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px;
+}
+
+.inspector dl div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #30343d;
+}
+
+.inspector dt {
+    color: #a9adb8;
+}
+
+.inspector dd {
+    margin: 0;
+    font-weight: bold;
+}
+
+.hint {
+    color: #a9adb8;
+}
+
+#start-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #101218;
+}
+
+@media screen and (max-width: 900px) {
+    .workspace {
+        display: block;
+    }
+
+    .shape-panel,
+    .inspector {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
